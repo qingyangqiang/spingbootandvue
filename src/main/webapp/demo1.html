@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue的on-keydown事件</title>
+</head>
+<script src="js/vue.js"></script>
+<body>
+  <div id="light">
+      <button @click="lang()">浪起来</button>
+      <button @click="stop">低调</button><br>
+      <h3>{{msg}}</h3>
+  </div>
+<script>
+    new Vue({
+        el:"#light",
+        data:{
+            msg: "浪起来,come!!!!!!",
+            interval:null
+        },
+        methods:{
+            lang(){
+                if (this.interval != null)return;
+                 this.interval = setInterval( () => {
+                        var msg = this.msg;
+                        var start = msg.substring(0,1);
+                        var end = msg.substring(1);
+                        this.msg = end + start;
+                    },400);
+
+            },
+            stop(){
+                clearInterval(this.interval);
+                this.interval = null;
+            }
+        }
+    })
+</script>
+</body>
+</html>
