@@ -18,20 +18,21 @@
             msg: "浪起来,come!!!!!!",
             interval:null
         },
-        methods:{   // lang(){
-            //     if (this.interval != null)return;
-            //      this.interval = setInterval( () => {
-            //             var msg = this.msg;
-            //             var start = msg.substring(0,1);
-            //             var end = msg.substring(1);
-            //             this.msg = end + start;
-            //         },400);
-            //
-            // },
-            // stop(){
-            //     clearInterval(this.interval);
-            //     this.interval = null;
-            // }
+        methods:{
+            lang(){
+                if (this.interval != null)return;
+                 this.interval = setInterval( () => {
+                        var msg = this.msg;
+                        var start = msg.substring(0,1);
+                        var end = msg.substring(1);
+                        this.msg = end + start;
+                    },400);
+
+            },
+            stop(){
+                clearInterval(this.interval);
+                this.interval = null;
+            }
 
         }
     })
